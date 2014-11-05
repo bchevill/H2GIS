@@ -112,4 +112,14 @@ public final class TINFeatureFactory {
         public static DPoint createDPoint(Coordinate coord) throws DelaunayError {
                 return new DPoint(coord);
         }
+        
+        /**
+         * Convert a DPoint to a coordinate object
+         * @param dPoint
+         * @return Coordinate
+         */
+        public static Coordinate dPointToCoordinate(DPoint dPoint){
+            return new Coordinate(dPoint.getX(), dPoint.getY(), dPoint.getZ());
+        }
+         
 }

@@ -3070,6 +3070,22 @@ public class SpatialFunctionTest {
         }
     }
     
+    @Test
+    public void test_ST_RidgeLine() throws Exception {
+        ResultSet rs = st.executeQuery("SELECT ST_RidgeLine('POLYGON ((0 0 0, 10 0 0, 5 5 10, 0 0 0))'::GEOMETRY);");
+        rs.next();
+        assertGeometryEquals("LINESTRING(5 0 0, 5 5 10)", rs.getBytes(1));
+        rs.close();
+    }
+    
+    @Test
+    public void test_ST_RidgeLine1() throws Exception {
+        ResultSet rs = st.executeQuery("SELECT ST_RidgeLine('POLYGON ((0 10 10,10 10 10, 5 0 0, 0 10 10))'::GEOMETRY);");
+        rs.next();
+        assertGeometryEquals("LINESTRING(5 10 10, 5 0 0)", rs.getBytes(1));
+        rs.close();
+    }
+    
     
     
 }

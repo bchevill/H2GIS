@@ -63,6 +63,7 @@ import org.h2gis.network.graph_creator.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import org.h2gis.h2spatialext.function.spatial.topography.ST_RidgeLine;
 
 /**
  * Registers the SQL functions contained in h2spatial-ext.
@@ -165,7 +166,8 @@ public class CreateSpatialExtension {
                 new ST_ShortestPath(),
                 new ST_ShortestPathLength(),
                 new ST_ShortestPathTree(),
-                new ST_LineIntersector()};
+                new ST_LineIntersector(),
+                new ST_RidgeLine()};
     }
 
     /**
